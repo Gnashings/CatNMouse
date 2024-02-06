@@ -1,0 +1,9 @@
+﻿  CatNMouse.cpp
+D:\Game Projects\CatNMouse\CatNMouse\CatNMouse.cpp(9,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\Game Projects\CatNMouse\CatNMouse\CatNMouse.cpp(52,19): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
+          with
+          [
+              _Rep=std::chrono::system_clock::rep
+          ]
+D:\Game Projects\CatNMouse\CatNMouse\CatNMouse.cpp(199,10): warning C4101: 'hadMoved': unreferenced local variable
+  CatNMouse.vcxproj -> D:\Game Projects\CatNMouse\CatNMouse\x64\Debug\CatNMouse.exe
