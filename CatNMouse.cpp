@@ -1,4 +1,4 @@
-// CatNMouse.cpp : This file contains the 'main' function. Program execution begins and ends there.
+
 #include <string.h>
 #include <iostream>
 #include <fstream>
@@ -6,8 +6,7 @@
 #include <string>
 #include "Traversal.h"
 #include <time.h>      
-#include <sstream>CAT: 
-#include <array>
+#include <sstream>
 #include <algorithm>
 #include <random>
 #include <chrono>       
@@ -41,7 +40,7 @@ int raty = 0;
 int catx = 0;
 int caty = 0;
 
-//array<int, 4> deckStack{-2,-1,1,2};
+
 vector<int> deck{ -2, -1, 1, 2 };       //our possible directions. In number form.
 vector<vector<char>> gameBoard;
 
@@ -51,7 +50,6 @@ int RandomSeed(vector<int> exclude)
     //using time to generate a seed
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     
-    //shuffle(deckStack.begin(), deckStack.end(), std::default_random_engine(seed));
     //shuffling that deck
     shuffle(deck.begin(), deck.end(), std::default_random_engine(seed));
     vector<int> buffer = deck;
@@ -392,7 +390,7 @@ int main()
     CatTurn();
     gameBoard = UpdateMap();
 
-    //updating jic
+    //updating positions
     DetermineCharacterPositions();
 
     char answer;

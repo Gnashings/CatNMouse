@@ -1,6 +1,10 @@
 #include "Traversal.h"
 #include <iostream>
 
+/*
+* Handles all the movement/looking around in the simulation
+*/
+
 vector<vector<char>> tempBoard;
 
 void InitGameBoard(vector<vector<char>> gBoard)

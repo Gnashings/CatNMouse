@@ -1,9 +1,11 @@
 ﻿  CatNMouse.cpp
-D:\Game Projects\CatNMouse\CatNMouse\CatNMouse.cpp(9,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-D:\Game Projects\CatNMouse\CatNMouse\CatNMouse.cpp(52,19): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
+G:\Game Projects\Dogfight\CatNMouse\CatNMouse.cpp(51,19): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
           with
           [
               _Rep=std::chrono::system_clock::rep
           ]
-D:\Game Projects\CatNMouse\CatNMouse\CatNMouse.cpp(199,10): warning C4101: 'hadMoved': unreferenced local variable
-  CatNMouse.vcxproj -> D:\Game Projects\CatNMouse\CatNMouse\x64\Debug\CatNMouse.exe
+G:\Game Projects\Dogfight\CatNMouse\CatNMouse.cpp(197,10): warning C4101: 'hadMoved': unreferenced local variable
+  Traversal.cpp
+  Generating Code...
+G:\Game Projects\Dogfight\CatNMouse\Traversal.cpp(71): warning C4715: 'LookSpecificDirection': not all control paths return a value
+  CatNMouse.vcxproj -> G:\Game Projects\Dogfight\CatNMouse\x64\Debug\CatNMouse.exe
