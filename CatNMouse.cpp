@@ -225,7 +225,7 @@ void CatTurn()
     vector<int> exclusions;
     for (int i : {1, -1, 2, -2})
     {
-        if (CanMove(ratx, raty, i) == false)
+        if (CanMove(catx, caty, i) == false)
         {
             exclusions.push_back(i);
         }
@@ -233,31 +233,32 @@ void CatTurn()
     switch (cMood) {
     case WANDERING:
         cout << "CAT: looking for that rat..." << "\n";
-        for (int i : {1, -1, 2, -2})
-        {   
-            object = LookSpecificDirection(catx, caty, i);
-            
-            if (object == '1')
-            {
-                //We saw a rat, get em!
-                exclusions.push_back(i);
-                ratDir = (Direction)-i;
-                rMood = FLEEING;
-                break;
-            }
-            if (object == '1')
-            {
-                //We see cheese, better approach!
-                catDir = (Direction)i;
-                //cout << "(STALKING)CHANGING DIR TO " << catDir << "\n";
-                cMood = STALKING;
-            }
+        if (exclusions.size() == 0)
+        {
+            exclusions.push_back(catDir);
+            int seed = RandomSeed(exclusions);
+            catDir = (Direction)seed;
+        }
+        object = LookSpecificDirection(catx, caty, catDir);
+        if (object == '1')
+        {
+            cout << "CAT: I see a rat!" << "\n";
+            //We see a rat, get em!
+            cMood = STALKING;
+            break;
         }
         //if our path is blocked
         if (CanMove(catx, caty, catDir) == false)
         {
-            exclusions.push_back(-catDir);
+            cout << "Something in my way " << catDir << "\n";
+            if (object == '0')
+            {
+                catDir = (Direction)-catDir;
+                break;
+            }
             exclusions.push_back(catDir);
+            exclusions.push_back(-catDir);
+            
             int seed = RandomSeed(exclusions);
             catDir = (Direction)seed;
             break;
@@ -266,13 +267,19 @@ void CatTurn()
         {
             GetShortestPathways(catx, caty, -catDir);
         }
-        MoveActor(catx, caty, catDir);
+        //MoveActor(catx, caty, catDir);
         GrabObject(catx, caty, '1');
         break;
     case STALKING:
         cout << "CAT: I see a rat!" << "\n";
+        object = LookSpecificDirection(catx, caty, catDir);
+        if (object != '1')
+        {
+            cout << "CAT: I lost the rat!" << "\n";
+            cMood = WANDERING;
+        }
         //cout << "CAT: STALKING" << catDir << "\n";
-        MoveActor(catx, caty, catDir);
+        //MoveActor(catx, caty, catDir);
         break;
     }
     
@@ -284,7 +291,7 @@ void CatTurn()
         GrabObject(catx, caty, '1');
         break;
     case STALKING:
-        cout << "CAT: Running after him!";
+        cout << "CAT: Running after him!" << "\n";;
         //cout << "STALKING MOVEMENT" << catDir << "\n";
         MoveActor(catx, caty, catDir);
         break;
@@ -319,6 +326,9 @@ void GameIteration() {
     DetermineCharacterPositions();
     RatTurn();
     CatTurn();
+    gameBoard = UpdateMap();
+    PrintMap(gameBoard);
+    cout << "press any character but 'x' and enter to progress the simulation" << "\n";
     char answer;
     std::cin >> answer;
 }
@@ -392,10 +402,10 @@ int main()
 
     //updating positions
     DetermineCharacterPositions();
-
+    cout << "press any character but 'x' and enter to progress the simulation" << "\n";
     char answer;
     std::cin >> answer;
-    while (answer != 'y')
+    while (answer != 'x')
     {
         GameIteration();
     }

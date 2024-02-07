@@ -29,7 +29,7 @@ char LookSpecificDirection(int x, int y, int dir)
         //cout << "\n";
         break;
     case -1:
-        cout << "looking south" << "\n";
+        //cout << "looking south" << "\n";
         for (int i = x + 1; i < tempBoard.size(); i++)
         {
             if (IsInterestingObject(tempBoard[i][y]))
@@ -42,7 +42,7 @@ char LookSpecificDirection(int x, int y, int dir)
         //cout << "\n";
         break;
     case 2:
-        cout << "looking east" << "\n";
+        //cout << "looking east" << "\n";
         for (int i = y + 1; i < tempBoard.size(); i++)
         {
             if (IsInterestingObject(tempBoard[x][i]))
@@ -54,7 +54,7 @@ char LookSpecificDirection(int x, int y, int dir)
         //cout << "\n";
         break;
     case -2:
-        cout << "looking west" << "\n";
+        //cout << "looking west" << "\n";
         for (int i = y - 1; i >= 1; i--)
         {
             if (IsInterestingObject(tempBoard[x][i]))
@@ -86,17 +86,17 @@ bool IsInterestingObject(char item)
     }
     if (item == '0')
     {
-        cout << item << " Cheese was discovered" << "\n";
+        //cout << item << " Cheese was discovered" << "\n";
         return true;
     }
     if (item == '2')
     {
-        cout << item << " Cat was discovered" << "\n";
+        //cout << item << " Cat was discovered" << "\n";
         return true;
     }
     if (item == '1')
     {
-        cout << item << " Rat was discovered" << "\n";
+        //cout << item << " Rat was discovered" << "\n";
         return true;
     }
     //cout << item << " Nothing of interest was discovered" << "\n";
@@ -162,7 +162,7 @@ bool MoveActor(int x, int y, int dir)
         }
     }
 
-    PrintCurrTempMap();
+    //PrintCurrTempMap();
     return moved;
 }
 
