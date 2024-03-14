@@ -1,11 +1,17 @@
-﻿  CatNMouse.cpp
-G:\Game Projects\Dogfight\CatNMouse\CatNMouse.cpp(51,19): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
+﻿  Cat.cpp
+G:\Game Projects\Dogfight\CatNMouse\Cat.cpp(59,4): error C2660: 'Entity::BlockDirection': function does not take 0 arguments
+G:\Game Projects\Dogfight\CatNMouse\Entity.h(84,14): message : see declaration of 'Entity::BlockDirection'
+G:\Game Projects\Dogfight\CatNMouse\Cat.cpp(59,4): message : while trying to match the argument list '()'
+  CatNMouse.cpp
+  Entity.cpp
+G:\Game Projects\Dogfight\CatNMouse\Entity.cpp(187,19): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
           with
           [
               _Rep=std::chrono::system_clock::rep
           ]
-G:\Game Projects\Dogfight\CatNMouse\CatNMouse.cpp(197,10): warning C4101: 'hadMoved': unreferenced local variable
-  Traversal.cpp
+  GameBoard.cpp
+  Mouse.cpp
+G:\Game Projects\Dogfight\CatNMouse\Mouse.cpp(88,4): error C2660: 'Entity::BlockDirection': function does not take 0 arguments
+G:\Game Projects\Dogfight\CatNMouse\Entity.h(84,14): message : see declaration of 'Entity::BlockDirection'
+G:\Game Projects\Dogfight\CatNMouse\Mouse.cpp(88,4): message : while trying to match the argument list '()'
   Generating Code...
-G:\Game Projects\Dogfight\CatNMouse\Traversal.cpp(71): warning C4715: 'LookSpecificDirection': not all control paths return a value
-  CatNMouse.vcxproj -> G:\Game Projects\Dogfight\CatNMouse\x64\Debug\CatNMouse.exe

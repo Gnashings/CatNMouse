@@ -177,7 +177,6 @@ void GrabObject(int x, int y, char obj)
             {
                 if (tempBoard[x + i][y + j] == obj)
                 {
-
                     tempBoard[x + i][y + j] = '_';
                     break;
 

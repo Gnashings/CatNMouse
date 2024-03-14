@@ -1,5 +1,5 @@
 XXXXXXXXXXXXXXXX
-X_____________1X
+X_____________MX
 X_XXX_XXXX_XXX_X
 X_XXX_XXXX_XXX_X
 X_XXX_XXXX_XXX_X
@@ -12,5 +12,5 @@ X____0_________X
 X_XXX_XXXX_XXX_X
 X_XXX_XXXX_XXX_X
 X_XXX_XXXX_XXX_X
-X2____________0X
+XC_____________X
 XXXXXXXXXXXXXXXX
